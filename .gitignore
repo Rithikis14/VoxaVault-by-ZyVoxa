@@ -1,0 +1,73 @@
+# ==========================================
+# VoxaVault Production .gitignore
+# ==========================================
+
+# ------------------------------------------
+# 1. Environment & Local Secrets
+# ------------------------------------------
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+!.env.example
+
+# ------------------------------------------
+# 2. Dependencies
+# ------------------------------------------
+node_modules/
+.pnpm-store/
+.yarn/
+*.log
+
+# ------------------------------------------
+# 3. Build Outputs & Bundles
+# ------------------------------------------
+dist/
+dist-ssr/
+build/
+*.local
+
+# ------------------------------------------
+# 4. Vite & Framework Caches
+# ------------------------------------------
+.vite/
+.cache/
+.tanstack/
+.turbo/
+
+# ------------------------------------------
+# 5. Supabase Local Configuration & Secrets
+# ------------------------------------------
+supabase/.temp/
+supabase/functions/.env
+
+# ------------------------------------------
+# 6. IDEs & System Files
+# ------------------------------------------
+.DS_Store
+.DS_Store?
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# WebStorm / JetBrains
+.idea/
+
+# ------------------------------------------
+# 7. Testing & Coverage
+# ------------------------------------------
+coverage/
+.nyc_output/
+cypress/videos/
+cypress/screenshots/
