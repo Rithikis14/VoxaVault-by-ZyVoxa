@@ -27,7 +27,12 @@ export interface Pattern {
   problems: Problem[];
 }
 
-type Raw = [number, string, "E" | "M" | "H"];
+type Raw = [
+  number,
+  string,
+  "E" | "M" | "H",
+  string?
+];
 
 const slugify = (s: string) =>
   s.toLowerCase().replace(/[^a-z0-9\s-]/g, "").trim().replace(/[\s-]+/g, "-");
@@ -46,16 +51,18 @@ function def(
     name,
     slug,
     ...info,
-    problems: raw.map(([n, title, d], i) => ({
-      id: String(n),
-      leetcode_number: n,
-      title,
-      difficulty: diffMap[d],
-      leetcode_url: `https://leetcode.com/problems/${slugify(title)}/`,
-      youtube_url: `https://www.youtube.com/results?search_query=${encodeURIComponent(`leetcode ${n} ${title}`)}`,
-      order_number: i + 1,
-      pattern_slug: slug,
-    })),
+    
+problems: raw.map(([n, title, d, youtubeUrl], i) => ({
+  id: String(n),
+  leetcode_number: n,
+  title,
+  difficulty: diffMap[d],
+  leetcode_url: `https://leetcode.com/problems/${slugify(title)}/`,
+  youtube_url: youtubeUrl ?? `https://www.youtube.com/results?search_query=${encodeURIComponent(`leetcode ${n} ${title}`)}`,
+  order_number: i + 1,
+  pattern_slug: slug,
+})),
+
   };
 }
 
@@ -68,7 +75,7 @@ export const patterns: Pattern[] = [
     complexity: "O(n) time · O(1) space",
     common_mistakes: ["Forgetting to skip duplicates in 3Sum", "Off-by-one when pointers cross", "Moving the wrong pointer"],
     cheat_sheet: "while (l < r) {\n  if (ok(l, r)) return;\n  sum < target ? l++ : r--;\n}",
-  }, [[125, "Valid Palindrome", "E"], [344, "Reverse String", "E"], [26, "Remove Duplicates from Sorted Array", "E"], [977, "Squares of a Sorted Array", "E"], [283, "Move Zeroes", "E"], [167, "Two Sum II - Input Array Is Sorted", "M"], [15, "3Sum", "M"], [11, "Container With Most Water", "M"], [75, "Sort Colors", "M"], [42, "Trapping Rain Water", "H"]]),
+  }, [[125, "Valid Palindrome", "E", "https://youtu.be/NfEwZ7hIALk?si=8R73kpS6oZxPrdKJ"], [344, "Reverse String", "E"], [26, "Remove Duplicates from Sorted Array", "E"], [977, "Squares of a Sorted Array", "E"], [283, "Move Zeroes", "E"], [167, "Two Sum II - Input Array Is Sorted", "M"], [15, "3Sum", "M"], [11, "Container With Most Water", "M"], [75, "Sort Colors", "M"], [42, "Trapping Rain Water", "H"]]),
   def(2, "Sliding Window", {
     description: "Maintain a contiguous window that grows and shrinks as you scan.",
     core_idea: "[ l ····· r ] →",
