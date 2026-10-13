@@ -75,7 +75,7 @@ export const patterns: Pattern[] = [
     complexity: "O(n) time · O(1) space",
     common_mistakes: ["Forgetting to skip duplicates in 3Sum", "Off-by-one when pointers cross", "Moving the wrong pointer"],
     cheat_sheet: "while (l < r) {\n  if (ok(l, r)) return;\n  sum < target ? l++ : r--;\n}",
-  }, [[125, "Valid Palindrome", "E", "https://youtu.be/NfEwZ7hIALk?si=8R73kpS6oZxPrdKJ"], [344, "Reverse String", "E","https://youtu.be/UD3HX92MgS4"], [26, "Remove Duplicates from Sorted Array", "E"], [977, "Squares of a Sorted Array", "E"], [283, "Move Zeroes", "E"], [167, "Two Sum II - Input Array Is Sorted", "M"], [15, "3Sum", "M"], [11, "Container With Most Water", "M"], [75, "Sort Colors", "M"], [42, "Trapping Rain Water", "H"]]),
+  }, [[125, "Valid Palindrome", "E", "https://youtu.be/NfEwZ7hIALk?si=8R73kpS6oZxPrdKJ"], [344, "Reverse String", "E","https://youtu.be/UD3HX92MgS4"], [26, "Remove Duplicates from Sorted Array", "E", "https://youtu.be/ih1XkZE5pZM"], [977, "Squares of a Sorted Array", "E"], [283, "Move Zeroes", "E"], [167, "Two Sum II - Input Array Is Sorted", "M"], [15, "3Sum", "M"], [11, "Container With Most Water", "M"], [75, "Sort Colors", "M"], [42, "Trapping Rain Water", "H"]]),
   def(2, "Sliding Window", {
     description: "Maintain a contiguous window that grows and shrinks as you scan.",
     core_idea: "[ l ····· r ] →",
