@@ -84,7 +84,7 @@ export const patterns: Pattern[] = [
     complexity: "O(n) time · O(k) space",
     common_mistakes: ["Shrinking with if instead of while", "Updating the answer at the wrong moment", "Not cleaning up the frequency map"],
     cheat_sheet: "for (r = 0; r < n; r++) {\n  add(a[r]);\n  while (invalid()) remove(a[l++]);\n  best = max(best, r - l + 1);\n}",
-  }, [[643, "Maximum Average Subarray I", "E"], [121, "Best Time to Buy and Sell Stock", "E"], [3, "Longest Substring Without Repeating Characters", "M"], [424, "Longest Repeating Character Replacement", "M"], [567, "Permutation in String", "M"], [209, "Minimum Size Subarray Sum", "M"], [1004, "Max Consecutive Ones III", "M"], [438, "Find All Anagrams in a String", "M"], [76, "Minimum Window Substring", "H"], [239, "Sliding Window Maximum", "H"]]),
+  }, [[643, "Maximum Average Subarray I", "E","https://youtu.be/gy4gLmb31yQ"], [121, "Best Time to Buy and Sell Stock", "E"], [3, "Longest Substring Without Repeating Characters", "M"], [424, "Longest Repeating Character Replacement", "M"], [567, "Permutation in String", "M"], [209, "Minimum Size Subarray Sum", "M"], [1004, "Max Consecutive Ones III", "M"], [438, "Find All Anagrams in a String", "M"], [76, "Minimum Window Substring", "H"], [239, "Sliding Window Maximum", "H"]]),
   def(3, "Prefix Sum", {
     description: "Precompute running totals so any range sum is a subtraction.",
     core_idea: "sum(i..j) = P[j+1] − P[i]",
